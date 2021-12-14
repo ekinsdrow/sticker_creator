@@ -5,9 +5,15 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text('Button'),
+    return SizedBox(
+      height: 60,
+      child: ElevatedButton(
+        onPressed: () {},
+        style: Theme.of(context).elevatedButtonTheme.style,
+        child: Text(
+          'Button',
+        ),
+      ),
     );
   }
 }
