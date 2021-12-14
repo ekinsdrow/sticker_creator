@@ -4,12 +4,12 @@ import 'package:sticker_creator/generated/l10n.dart';
 import 'package:sticker_creator/internal/router/router.dart';
 
 class StickerApp extends StatelessWidget {
-  const StickerApp({Key? key}) : super(key: key);
+ StickerApp({Key? key}) : super(key: key);
+
+  final _router = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    final _router = AppRouter();
-
     return MaterialApp.router(
       title: 'Sticker Creator',
       localizationsDelegates: const [
@@ -19,8 +19,8 @@ class StickerApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en', ''), 
-        Locale('ru', ''), 
+        Locale('en', ''),
+        Locale('ru', ''),
       ],
       debugShowCheckedModeBanner: false,
       routeInformationParser: _router.defaultRouteParser(),

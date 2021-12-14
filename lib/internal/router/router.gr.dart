@@ -18,11 +18,18 @@ class _$AppRouter extends RootStackRouter {
     SplashRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const SplashPage());
+    },
+    HomeRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const HomePage());
     }
   };
 
   @override
-  List<RouteConfig> get routes => [RouteConfig(SplashRoute.name, path: '/')];
+  List<RouteConfig> get routes => [
+        RouteConfig(SplashRoute.name, path: '/'),
+        RouteConfig(HomeRoute.name, path: '/home')
+      ];
 }
 
 /// generated route for
@@ -31,4 +38,12 @@ class SplashRoute extends PageRouteInfo<void> {
   const SplashRoute() : super(SplashRoute.name, path: '/');
 
   static const String name = 'SplashRoute';
+}
+
+/// generated route for
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute() : super(HomeRoute.name, path: '/home');
+
+  static const String name = 'HomeRoute';
 }
