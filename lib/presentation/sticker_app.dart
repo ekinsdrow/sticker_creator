@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sticker_creator/generated/l10n.dart';
 import 'package:sticker_creator/internal/router/router.dart';
+import 'package:sticker_creator/presentation/theme/themes.dart';
 
 class StickerApp extends StatelessWidget {
  StickerApp({Key? key}) : super(key: key);
@@ -25,6 +26,7 @@ class StickerApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routeInformationParser: _router.defaultRouteParser(),
       routerDelegate: _router.delegate(),
+      theme: Themes.lightTheme,
     );
   }
 }
