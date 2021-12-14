@@ -59,6 +59,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Create sticker pack`
+  String get create_sticker_pack {
+    return Intl.message(
+      'Create sticker pack',
+      name: 'create_sticker_pack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your packs`
+  String get your_packs {
+    return Intl.message(
+      'Your packs',
+      name: 'your_packs',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
