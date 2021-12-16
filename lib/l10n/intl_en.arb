@@ -1,5 +1,7 @@
 {
     "sticker_app": "Sticker App",
     "create_sticker_pack": "Create sticker pack",
-    "your_packs":"Your packs"
+    "your_packs":"Your packs",
+    "next":" Next",
+    "sticker_pack_name":"Sticker pack name"
 }

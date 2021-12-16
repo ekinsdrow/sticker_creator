@@ -1,5 +1,7 @@
 {
     "sticker_app": "Sticker App",
     "create_sticker_pack": "Создать стикер пак",
+    "sticker_pack_name":"Название стикер пака",
+    "next":" Далее",
     "your_packs":"Твои паки"
 }
