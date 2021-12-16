@@ -8,11 +8,13 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: remove
-    AutoRouter.of(context).push(
-      const HomeRoute(),
-    );
+    //TODO:remove
 
+    AutoRouter.of(context).replaceAll(
+      [
+        const HomeRoute(),
+      ],
+    );
     return Scaffold(
       body: Center(
         child: Text(

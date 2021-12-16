@@ -10,5 +10,14 @@ class Themes {
         ),
       ),
     ),
+    iconTheme: const IconThemeData(
+      color: Color(0xFF2B3033),
+    ),
+    textTheme: const TextTheme(
+      headline1: TextStyle(
+        color: const Color(0xFF2B3033),
+        fontSize: 36,
+      ),
+    ),
   );
 }
