@@ -86,11 +86,27 @@ class _StickerPackItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey,
+    return Material(
+      color: Colors.grey,
+      borderRadius: BorderRadius.circular(
+        BorderRadiuses.small,
+      ),
+      child: InkWell(
         borderRadius: BorderRadius.circular(
           BorderRadiuses.small,
+        ),
+        onTap: () {
+          //TODO; open pack
+          context.router.push(
+            const PackRoute(),
+          );
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              BorderRadiuses.small,
+            ),
+          ),
         ),
       ),
     );
