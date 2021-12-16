@@ -21,24 +21,7 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          S.of(context).your_packs,
-                          style: Theme.of(context).textTheme.headline1,
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            //TODO: open info
-                          },
-                          icon:  Icon(
-                            Icons.info,
-                            color: Theme.of(context).iconTheme.color,
-                          ),
-                        )
-                      ],
-                    ),
+                    _Header(),
                     SizedBox(
                       height: Paddings.small,
                     ),
@@ -72,6 +55,72 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _Header extends StatefulWidget {
+  const _Header({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<_Header> createState() => _HeaderState();
+}
+
+class _HeaderState extends State<_Header> with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          S.of(context).your_packs,
+          style: Theme.of(context).textTheme.headline1,
+        ),
+        GestureDetector(
+          onLongPress: () {
+            if (_animationController.value == 1) {
+              _animationController.reverse();
+            } else if (_animationController.value == 0) {
+              _animationController.forward();
+            }
+          },
+          child: RotationTransition(
+            turns: Tween<double>(
+              begin: 0,
+              end: 1,
+            ).animate(_animationController),
+            child: IconButton(
+              onPressed: () {
+                //TODO: open info
+              },
+              icon: Icon(
+                Icons.info,
+                color: Theme.of(context).iconTheme.color,
+              ),
+            ),
+          ),
+        )
+      ],
     );
   }
 }

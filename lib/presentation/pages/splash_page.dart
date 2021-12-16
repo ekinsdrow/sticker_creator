@@ -8,20 +8,17 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO:remove
+
+    AutoRouter.of(context).replaceAll(
+      [
+        const HomeRoute(),
+      ],
+    );
     return Scaffold(
       body: Center(
-        child: GestureDetector(
-          onTap: () {
-            //TODO:remove
-            AutoRouter.of(context).replaceAll(
-              [
-                const HomeRoute(),
-              ],
-            );
-          },
-          child: Text(
-            S.of(context).sticker_app,
-          ),
+        child: Text(
+          S.of(context).sticker_app,
         ),
       ),
     );
