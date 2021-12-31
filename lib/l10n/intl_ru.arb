@@ -1,7 +1,13 @@
 {
-    "sticker_app": "Sticker App",
-    "create_sticker_pack": "Создать стикер пак",
-    "sticker_pack_name":"Название стикер пака",
-    "next":" Далее",
-    "your_packs":"Твои паки"
+  "add_sticker": "Добавить стикер",
+  "camera": "Камера",
+  "cancel": "Отмена",
+  "create_sticker_pack": "Создать стикер пак",
+  "gallery": "Галерея",
+  "info": "Инфо",
+  "next": "Далее",
+  "save": "Сохранить",
+  "sticker_app": "Sticker App",
+  "sticker_pack_name": "Название стикер пака",
+  "your_packs": "Твои паки"
 }

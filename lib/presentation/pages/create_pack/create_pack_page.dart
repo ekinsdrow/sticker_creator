@@ -30,34 +30,36 @@ class _CreatePackPageState extends State<CreatePackPage> {
           S.of(context).create_sticker_pack,
         ),
       ),
-      body: Container(
-        padding: EdgeInsets.all(
-          Paddings.small,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: [
-                Input(
-                  controller: _nameController,
-                  hintText: S.of(context).sticker_pack_name,
-                ),
-                //TODO:choose type(tg/whatsapp)
-              ],
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: Button(
-                onPressed: () {
-                  context.router.replace(
-                    const PackRoute(),
-                  );
-                },
-                text: S.of(context).next,
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.all(
+            Paddings.small,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  Input(
+                    controller: _nameController,
+                    hintText: S.of(context).sticker_pack_name,
+                  ),
+                  //TODO:choose type(tg/whatsapp)
+                ],
               ),
-            )
-          ],
+              SizedBox(
+                width: double.infinity,
+                child: Button(
+                  onPressed: () {
+                    context.router.replace(
+                      const PackRoute(),
+                    );
+                  },
+                  text: S.of(context).next,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -50,11 +50,31 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Sticker App`
-  String get sticker_app {
+  /// `Add sticker`
+  String get add_sticker {
     return Intl.message(
-      'Sticker App',
-      name: 'sticker_app',
+      'Add sticker',
+      name: 'add_sticker',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message(
+      'Camera',
+      name: 'camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
       desc: '',
       args: [],
     );
@@ -70,21 +90,51 @@ class S {
     );
   }
 
-  /// `Your packs`
-  String get your_packs {
+  /// `Gallery`
+  String get gallery {
     return Intl.message(
-      'Your packs',
-      name: 'your_packs',
+      'Gallery',
+      name: 'gallery',
       desc: '',
       args: [],
     );
   }
 
-  /// ` Next`
+  /// `Info`
+  String get info {
+    return Intl.message(
+      'Info',
+      name: 'info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
   String get next {
     return Intl.message(
-      ' Next',
+      'Next',
       name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sticker App`
+  String get sticker_app {
+    return Intl.message(
+      'Sticker App',
+      name: 'sticker_app',
       desc: '',
       args: [],
     );
@@ -95,6 +145,16 @@ class S {
     return Intl.message(
       'Sticker pack name',
       name: 'sticker_pack_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your packs`
+  String get your_packs {
+    return Intl.message(
+      'Your packs',
+      name: 'your_packs',
       desc: '',
       args: [],
     );

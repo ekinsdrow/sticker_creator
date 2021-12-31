@@ -3,46 +3,48 @@ import 'package:sticker_creator/internal/utils/hex_color.dart';
 import 'package:sticker_creator/presentation/data/border_radiuses.dart';
 
 class Themes {
-  static ThemeData get lightTheme {
-    final _black = HexColor.fromHex('#2B3033') ?? Colors.black;
+  static Color get blackColor => HexColor.fromHex('#2B3033') ?? Colors.black;
+  static Color get redColor => HexColor.fromHex('#C62828') ?? Colors.red;
+  static Color get whiteColor => Colors.white;
 
+  static ThemeData get lightTheme {
     return ThemeData(
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          primary: _black,
+          primary: blackColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(BorderRadiuses.medium),
           ),
         ),
       ),
       iconTheme: IconThemeData(
-        color: _black,
+        color: blackColor,
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
-          color: _black,
+          color: blackColor,
           fontSize: 36,
         ),
         bodyText1: TextStyle(
-          color: _black,
+          color: blackColor,
         ),
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.white,
+        backgroundColor: whiteColor,
         elevation: 0,
         iconTheme: IconThemeData(
-          color: _black,
+          color: blackColor,
         ),
         titleTextStyle: TextStyle(
-          color: _black,
+          color: blackColor,
         ),
       ),
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: whiteColor,
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
           borderSide: BorderSide(
             width: 1,
-            color: _black,
+            color: blackColor,
           ),
           borderRadius: BorderRadius.circular(
             BorderRadiuses.medium,
@@ -51,7 +53,7 @@ class Themes {
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 1,
-            color: _black,
+            color: blackColor,
           ),
           borderRadius: BorderRadius.circular(
             BorderRadiuses.medium,

@@ -22,9 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_sticker": MessageLookupByLibrary.simpleMessage("Добавить стикер"),
+        "camera": MessageLookupByLibrary.simpleMessage("Камера"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "create_sticker_pack":
             MessageLookupByLibrary.simpleMessage("Создать стикер пак"),
-        "next": MessageLookupByLibrary.simpleMessage(" Далее"),
+        "gallery": MessageLookupByLibrary.simpleMessage("Галерея"),
+        "info": MessageLookupByLibrary.simpleMessage("Инфо"),
+        "next": MessageLookupByLibrary.simpleMessage("Далее"),
+        "save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "sticker_app": MessageLookupByLibrary.simpleMessage("Sticker App"),
         "sticker_pack_name":
             MessageLookupByLibrary.simpleMessage("Название стикер пака"),
