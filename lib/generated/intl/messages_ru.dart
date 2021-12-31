@@ -27,9 +27,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "create_sticker_pack":
             MessageLookupByLibrary.simpleMessage("Создать стикер пак"),
+        "developer":
+            MessageLookupByLibrary.simpleMessage("Разработчик - Ivan Kolchev"),
         "gallery": MessageLookupByLibrary.simpleMessage("Галерея"),
         "info": MessageLookupByLibrary.simpleMessage("Инфо"),
         "next": MessageLookupByLibrary.simpleMessage("Далее"),
+        "repo": MessageLookupByLibrary.simpleMessage("Репозиторий на Github"),
         "save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "sticker_app": MessageLookupByLibrary.simpleMessage("Sticker App"),
         "sticker_pack_name":

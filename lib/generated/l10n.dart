@@ -90,6 +90,16 @@ class S {
     );
   }
 
+  /// `Developed by Ivan Kolchev`
+  String get developer {
+    return Intl.message(
+      'Developed by Ivan Kolchev',
+      name: 'developer',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Gallery`
   String get gallery {
     return Intl.message(
@@ -115,6 +125,16 @@ class S {
     return Intl.message(
       'Next',
       name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repository on Github`
+  String get repo {
+    return Intl.message(
+      'Repository on Github',
+      name: 'repo',
       desc: '',
       args: [],
     );
