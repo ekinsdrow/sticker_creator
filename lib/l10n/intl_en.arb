@@ -1,7 +1,13 @@
 {
-    "sticker_app": "Sticker App",
+    "add_sticker": "Add sticker",
+    "camera": "Camera",
+    "cancel": "Cancel",
     "create_sticker_pack": "Create sticker pack",
-    "your_packs":"Your packs",
-    "next":" Next",
-    "sticker_pack_name":"Sticker pack name"
+    "gallery": "Gallery",
+    "info": "Info",
+    "next": "Next",
+    "save": "Save",
+    "sticker_app": "Sticker App",
+    "sticker_pack_name": "Sticker pack name",
+    "your_packs": "Your packs"
 }

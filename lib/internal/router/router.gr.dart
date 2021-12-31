@@ -30,6 +30,16 @@ class _$AppRouter extends RootStackRouter {
     PackRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const PackPage());
+    },
+    InfoRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const InfoPage());
+    },
+    StickerRoute.name: (routeData) {
+      final args = routeData.argsAs<StickerRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: StickerPage(image: args.image, key: args.key));
     }
   };
 
@@ -38,7 +48,9 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(SplashRoute.name, path: '/'),
         RouteConfig(HomeRoute.name, path: '/home'),
         RouteConfig(CreatePackRoute.name, path: '/create_pack'),
-        RouteConfig(PackRoute.name, path: '/pack')
+        RouteConfig(PackRoute.name, path: '/pack'),
+        RouteConfig(InfoRoute.name, path: '/info'),
+        RouteConfig(StickerRoute.name, path: '/sticker')
       ];
 }
 
@@ -72,4 +84,35 @@ class PackRoute extends PageRouteInfo<void> {
   const PackRoute() : super(PackRoute.name, path: '/pack');
 
   static const String name = 'PackRoute';
+}
+
+/// generated route for
+/// [InfoPage]
+class InfoRoute extends PageRouteInfo<void> {
+  const InfoRoute() : super(InfoRoute.name, path: '/info');
+
+  static const String name = 'InfoRoute';
+}
+
+/// generated route for
+/// [StickerPage]
+class StickerRoute extends PageRouteInfo<StickerRouteArgs> {
+  StickerRoute({required File image, Key? key})
+      : super(StickerRoute.name,
+            path: '/sticker', args: StickerRouteArgs(image: image, key: key));
+
+  static const String name = 'StickerRoute';
+}
+
+class StickerRouteArgs {
+  const StickerRouteArgs({required this.image, this.key});
+
+  final File image;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'StickerRouteArgs{image: $image, key: $key}';
+  }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sticker_creator/presentation/data/border_radiuses.dart';
 
 class Input extends StatelessWidget {
   const Input({

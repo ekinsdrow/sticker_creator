@@ -34,7 +34,9 @@ class HomePage extends StatelessWidget {
                         ),
                         AnimatedIconButton(
                           onPressed: () {
-                            //TODO:info
+                            context.router.push(
+                              const InfoRoute(),
+                            );
                           },
                           iconData: Icons.info,
                         ),
