@@ -29,6 +29,7 @@ class Themes {
           color: blackColor,
         ),
       ),
+      
       appBarTheme: AppBarTheme(
         backgroundColor: whiteColor,
         elevation: 0,

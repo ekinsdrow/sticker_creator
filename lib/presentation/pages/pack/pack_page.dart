@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sticker_creator/data/models/pack.dart';
 import 'package:sticker_creator/generated/l10n.dart';
 import 'package:sticker_creator/internal/router/router.dart';
 import 'package:sticker_creator/presentation/data/paddings.dart';
@@ -11,7 +12,12 @@ import 'package:sticker_creator/presentation/widgets/animated_icon_button.dart';
 import 'package:sticker_creator/presentation/widgets/button.dart';
 
 class PackPage extends StatelessWidget {
-  const PackPage({Key? key}) : super(key: key);
+  const PackPage({
+    Key? key,
+    required this.pack,
+  }) : super(key: key);
+
+  final Pack pack;
 
   void _showDialog(BuildContext context) {
     showCupertinoModalPopup(
@@ -76,8 +82,9 @@ class PackPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //TODO: pack name
-        title: const Text('Pack'),
+        title: Text(
+          pack.name,
+        ),
         actions: [
           AnimatedIconButton(
             onPressed: () {

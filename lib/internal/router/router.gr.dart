@@ -15,10 +15,6 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const SplashPage());
-    },
     HomeRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HomePage());
@@ -28,8 +24,10 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData, child: const CreatePackPage());
     },
     PackRoute.name: (routeData) {
+      final args = routeData.argsAs<PackRouteArgs>();
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const PackPage());
+          routeData: routeData,
+          child: PackPage(key: args.key, pack: args.pack));
     },
     InfoRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -45,21 +43,14 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   List<RouteConfig> get routes => [
-        RouteConfig(SplashRoute.name, path: '/'),
+        RouteConfig('/#redirect',
+            path: '/', redirectTo: '/home', fullMatch: true),
         RouteConfig(HomeRoute.name, path: '/home'),
         RouteConfig(CreatePackRoute.name, path: '/create_pack'),
         RouteConfig(PackRoute.name, path: '/pack'),
         RouteConfig(InfoRoute.name, path: '/info'),
         RouteConfig(StickerRoute.name, path: '/sticker')
       ];
-}
-
-/// generated route for
-/// [SplashPage]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute() : super(SplashRoute.name, path: '/');
-
-  static const String name = 'SplashRoute';
 }
 
 /// generated route for
@@ -80,10 +71,25 @@ class CreatePackRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [PackPage]
-class PackRoute extends PageRouteInfo<void> {
-  const PackRoute() : super(PackRoute.name, path: '/pack');
+class PackRoute extends PageRouteInfo<PackRouteArgs> {
+  PackRoute({Key? key, required Pack pack})
+      : super(PackRoute.name,
+            path: '/pack', args: PackRouteArgs(key: key, pack: pack));
 
   static const String name = 'PackRoute';
+}
+
+class PackRouteArgs {
+  const PackRouteArgs({this.key, required this.pack});
+
+  final Key? key;
+
+  final Pack pack;
+
+  @override
+  String toString() {
+    return 'PackRouteArgs{key: $key, pack: $pack}';
+  }
 }
 
 /// generated route for

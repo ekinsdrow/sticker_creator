@@ -11,8 +11,8 @@ dependencies:
     sdk: flutter
 
   #Architecture
-  bloc: ^8.0.1
-  flutter_bloc: ^8.0.0
+  bloc: ^8.0.2
+  flutter_bloc: ^8.0.1
 
   #DI
   provider: ^6.0.1
@@ -26,6 +26,7 @@ dependencies:
   freezed_annotation: ^0.15.0
   json_annotation: ^4.4.0
   rxdart: ^0.27.2
+  sqflite: ^2.0.2
   url_launcher: ^6.0.17
   flutter_localizations:
     sdk: flutter 

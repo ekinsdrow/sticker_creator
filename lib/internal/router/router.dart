@@ -3,10 +3,10 @@ import 'package:sticker_creator/presentation/pages/create_pack/create_pack_page.
 import 'package:sticker_creator/presentation/pages/home/home_page.dart';
 import 'package:sticker_creator/presentation/pages/info/info_page.dart';
 import 'package:sticker_creator/presentation/pages/pack/pack_page.dart';
-import 'package:sticker_creator/presentation/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:sticker_creator/presentation/pages/sticker_page/sticker_page.dart';
 import 'dart:io';
+import 'package:sticker_creator/data/models/pack.dart';
 
 part 'router.gr.dart';
 
@@ -14,12 +14,9 @@ part 'router.gr.dart';
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AutoRoute(
-      page: SplashPage,
-      initial: true,
-    ),
-    AutoRoute(
       page: HomePage,
       path: '/home',
+      initial: true,
     ),
     AutoRoute(
       page: CreatePackPage,
