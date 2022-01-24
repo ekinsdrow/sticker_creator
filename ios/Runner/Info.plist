@@ -49,5 +49,9 @@
   		<string>http</string>
   		<string>mailto</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Create Sticker</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Create Sticker</string>
 </dict>
 </plist>

@@ -29,7 +29,7 @@ class PackRepositoryImpl implements PackRepository {
   @override
   Future<int> addPack({required String name}) async {
     final id = await db.insert(
-      '$_dbName',
+      _dbName,
       {'name': name},
     );
 

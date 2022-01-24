@@ -1,9 +1,6 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:sqflite/sqlite_api.dart';
-import 'package:sticker_creator/internal/router/router.dart';
 import 'package:sticker_creator/presentation/pages/splash_page.dart';
 
 class AppScope extends StatelessWidget {
@@ -20,11 +17,13 @@ class AppScope extends StatelessWidget {
 
     return openDatabase(
       path,
-      version: 1,
+      version: 2,
       onCreate: (db, version) async {
         await db.execute(
           'CREATE TABLE Packs (id INTEGER PRIMARY KEY, name TEXT)',
         );
+
+        await db.execute('CREATE TABLE Stickers (id INTEGER PRIMARY KEY, path TEXT, packId INTEGER)');
       },
     );
   }
@@ -43,7 +42,7 @@ class AppScope extends StatelessWidget {
           }
         }
 
-        return Container();
+        return const SplashPage();
       },
     );
   }

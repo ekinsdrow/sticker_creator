@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sticker_creator/data/models/pack.dart';
 import 'package:sticker_creator/generated/l10n.dart';
 import 'package:sticker_creator/internal/router/router.dart';
@@ -19,22 +20,32 @@ class PackPage extends StatelessWidget {
 
   final Pack pack;
 
+  Future<void> _pickFile({
+    required ImageSource source,
+    required BuildContext context,
+  }) async {
+    context.router.pop();
+
+    final _picker = ImagePicker();
+
+    final picked = await _picker.pickImage(source: source);
+
+    if (picked != null) {
+      context.router.push(StickerRoute(
+        image: File(picked.path),
+      ));
+    }
+  }
+
   void _showDialog(BuildContext context) {
     showCupertinoModalPopup(
       context: context,
-      builder: (context) => CupertinoActionSheet(
+      builder: (ctx) => CupertinoActionSheet(
         actions: [
           Container(
             color: Themes.whiteColor,
             child: CupertinoActionSheetAction(
-              onPressed: () {
-                context.router.pop();
-
-                //TODO: open file
-                context.router.push(StickerRoute(
-                  image: File(''),
-                ));
-              },
+              onPressed: () => _pickFile(context: context, source: ImageSource.gallery),
               child: Text(
                 S.of(context).gallery,
                 style: TextStyle(
@@ -46,14 +57,7 @@ class PackPage extends StatelessWidget {
           Container(
             color: Themes.whiteColor,
             child: CupertinoActionSheetAction(
-              onPressed: () {
-                context.router.pop();
-
-                //TODO: open file
-                context.router.push(StickerRoute(
-                  image: File(''),
-                ));
-              },
+              onPressed: () => _pickFile(context: context, source: ImageSource.camera),
               child: Text(
                 S.of(context).camera,
                 style: TextStyle(
@@ -104,7 +108,7 @@ class PackPage extends StatelessWidget {
               Expanded(
                 child: Container(),
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Button(
                   onPressed: () => _showDialog(context),
