@@ -4,7 +4,7 @@ import 'package:sticker_creator/data/repositories/packs_repository.dart';
 
 class PackRepositoryImpl implements PackRepository {
   final Database db;
-  final _dbName = 'Packs';
+  final _tableName = 'Packs';
 
   PackRepositoryImpl({
     required this.db,
@@ -12,7 +12,7 @@ class PackRepositoryImpl implements PackRepository {
 
   @override
   Future<List<Pack>> getAllPacks() async {
-    final packsMaps = await db.rawQuery('SELECT * FROM $_dbName');
+    final packsMaps = await db.rawQuery('SELECT * FROM $_tableName');
     if (packsMaps.isEmpty) {
       return [];
     }
@@ -29,8 +29,10 @@ class PackRepositoryImpl implements PackRepository {
   @override
   Future<int> addPack({required String name}) async {
     final id = await db.insert(
-      _dbName,
-      {'name': name},
+      _tableName,
+      {
+        'name': name,
+      },
     );
 
     return id;

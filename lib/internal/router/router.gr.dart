@@ -37,7 +37,8 @@ class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<StickerRouteArgs>();
       return MaterialPageX<dynamic>(
           routeData: routeData,
-          child: StickerPage(image: args.image, key: args.key));
+          child: StickerPage(
+              image: args.image, filename: args.filename, key: args.key));
     }
   };
 
@@ -103,22 +104,26 @@ class InfoRoute extends PageRouteInfo<void> {
 /// generated route for
 /// [StickerPage]
 class StickerRoute extends PageRouteInfo<StickerRouteArgs> {
-  StickerRoute({required File image, Key? key})
+  StickerRoute({required File image, required String filename, Key? key})
       : super(StickerRoute.name,
-            path: '/sticker', args: StickerRouteArgs(image: image, key: key));
+            path: '/sticker',
+            args: StickerRouteArgs(image: image, filename: filename, key: key));
 
   static const String name = 'StickerRoute';
 }
 
 class StickerRouteArgs {
-  const StickerRouteArgs({required this.image, this.key});
+  const StickerRouteArgs(
+      {required this.image, required this.filename, this.key});
 
   final File image;
+
+  final String filename;
 
   final Key? key;
 
   @override
   String toString() {
-    return 'StickerRouteArgs{image: $image, key: $key}';
+    return 'StickerRouteArgs{image: $image, filename: $filename, key: $key}';
   }
 }

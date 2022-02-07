@@ -23,7 +23,9 @@ class AppScope extends StatelessWidget {
           'CREATE TABLE Packs (id INTEGER PRIMARY KEY, name TEXT)',
         );
 
-        await db.execute('CREATE TABLE Stickers (id INTEGER PRIMARY KEY, path TEXT, packId INTEGER)');
+        await db.execute(
+          'CREATE TABLE Stickers (id INTEGER PRIMARY KEY, path TEXT, packId INTEGER)',
+        );
       },
     );
   }

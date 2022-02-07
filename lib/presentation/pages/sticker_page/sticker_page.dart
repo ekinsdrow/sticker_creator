@@ -10,10 +10,12 @@ import 'package:sticker_creator/presentation/widgets/button.dart';
 class StickerPage extends StatelessWidget {
   const StickerPage({
     required final this.image,
+    required final this.filename,
     Key? key,
   }) : super(key: key);
 
   final File image;
+  final String filename;
 
   @override
   Widget build(BuildContext context) {

@@ -27,6 +27,7 @@ dependencies:
   json_annotation: ^4.4.0
   rxdart: ^0.27.2
   sqflite: ^2.0.2
+  path_provider: ^2.0.8
   url_launcher: ^6.0.17
   image_picker: ^0.8.4+4
   flutter_localizations:

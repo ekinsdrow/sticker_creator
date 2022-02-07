@@ -31,9 +31,12 @@ class PackPage extends StatelessWidget {
     final picked = await _picker.pickImage(source: source);
 
     if (picked != null) {
-      context.router.push(StickerRoute(
-        image: File(picked.path),
-      ));
+      context.router.push(
+        StickerRoute(
+          image: File(picked.path),
+          filename: picked.name,
+        ),
+      );
     }
   }
 
